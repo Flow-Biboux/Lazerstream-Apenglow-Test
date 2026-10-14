@@ -32,7 +32,7 @@ Times are milliseconds from `sendRawTransaction` until the signature shows up.
 Seven runs is a small sample, not a benchmark. I will extend it to 20.
 
 What stands out: `confirmed` and `finalized` arrive together, about one
-second after sending (identical to the millisecond in 5 of 7 runs). On
+second after sending (identical to the millisecond in 4 of 7 runs and within 7 ms in all). On
 TowerBFT, finalized took roughly 12.8 s.
 
 ## Setup
