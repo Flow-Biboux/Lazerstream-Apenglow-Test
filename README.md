@@ -19,20 +19,21 @@ for mainnet on October 21, 2026 (per Anza's announcement; check the
 4. Polls `getSignatureStatuses` every 200 ms as an independent RPC reference.
 5. Prints both tables, then the parsed transaction.
 
-## Results so far (two runs, devnet)
+## Results so far (7 runs, devnet)
 
-| Level     | Run 1 (ms) | Run 2 (ms) |
-| --------- | ---------- | ---------- |
-| processed | 575        | 531        |
-| confirmed | 1,066      | 931        |
-| finalized | 1,065      | 930        |
-| RPC finalized | not measured | 1,060 |
+| Level | Median (ms) | Range (ms) |
+| --- | --- | --- |
+| processed | 589 | 531 to 729 |
+| confirmed | 1,043 | 923 to 1,113 |
+| finalized | 1,050 | 923 to 1,113 |
+| RPC finalized (6 runs) | 1,066 | 1,009 to 1,129 |
 
-Two runs are an illustration, not a benchmark. I will replace this table with
-the median and range of 20 runs.
+Times are milliseconds from `sendRawTransaction` until the signature shows up.
+Seven runs is a small sample, not a benchmark. I will extend it to 20.
 
 What stands out: `confirmed` and `finalized` arrive together, about one
-second after sending. On TowerBFT, finalized took roughly 12.8 s.
+second after sending (identical to the millisecond in 5 of 7 runs). On
+TowerBFT, finalized took roughly 12.8 s.
 
 ## Setup
 
@@ -80,7 +81,3 @@ Article: *Alpenglow goes live on October 21: what changes for apps that read
 Solana data* (link to be added when published).
 
 Built by [Biboux](https://biboux.com).
-# Lazerstream-Apenglow-Test
-# Lazerstream-Apenglow-Test
-# Lazerstream-Apenglow-Test
-# Lazerstream-Apenglow-Test
